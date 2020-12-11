@@ -4,9 +4,9 @@ true-json-bigint
 [![Build Status](https://travis-ci.com/SebastianG77/true-json-bigint.svg?branch=master)](https://travis-ci.com/SebastianG77/true-json-bigint)
 [![NPM](https://nodei.co/npm/true-json-bigint.png?downloads=true&stars=true)](https://nodei.co/npm/true-json-bigint/)
 
-This is a module for parsing JSON strings to JSON objects and stringifying JSON objects to JSON strings. It is a fork of [json-bigint 0.3.0](https://www.npmjs.com/package/json-bigint/v/0.3.0), but enhances the original module in the following aspects. 
+This is a module for parsing JSON strings to JSON objects and stringifying JSON objects to JSON strings. It is a fork of [json-bigint](https://www.npmjs.com/package/json-bigint) and covers all features of version [1.0.0](https://www.npmjs.com/package/json-bigint/v/1.0.0) but enhances the original module in the following aspects. 
 
-1. It is possible to parse JSON strings containing numeric values larger than 1.797693134862315E+308. The module json-bigint 0.3.0 will throw the error "Bad number" in such cases.
+1. It is possible to parse JSON strings containing numeric values larger than 1.797693134862315E+308. The module json-bigint 1.0.0 will throw the error "Bad number" in such cases.
 2. This module has a proper support for scientific notation. The original module will parse values like 1e+100 to numeric values but not to big number objects as its string representation has less than 15 characters. This handling results in an inapproriate casting of integer values that are larger than 2<sup>53</sup> - 1 and written in scientific notation. With true-json-bigint the length of the floating point representation will be used to determine the length of the number. This change ensures that all numeric values written in scientific notation will be parsed to big number objects when necessary.
 
 The module generally works in the same way as the original one. Use the following command to add true-json-bigint into the node_moduels directory of your application:
@@ -47,4 +47,4 @@ console.log(result);
 
 ```
 
-See the README of [json-bigint 0.3.0](https://www.npmjs.com/package/json-bigint/v/0.3.0) for further details on how to use this module.
+See the README of [json-bigint 1.0.0](https://www.npmjs.com/package/json-bigint/v/1.0.0) for further details on how to use this module.
